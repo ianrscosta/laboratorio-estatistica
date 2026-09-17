@@ -1,0 +1,9 @@
+pip
+numpy
+scipy
+pandas
+matplotlib
+seaborn
+streamlit
+pytest
+
