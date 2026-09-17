@@ -1,0 +1,182 @@
+#+title: Statistical Laboratory Roadmap
+#+author: Ian Raphael Sampaio Costa
+#+startup: overview
+
+* TODO Phase 0: Development environment and repository
+  :PROPERTIES:
+  :STATUS: TODO
+  :END:
+  - [X] Verify the Nix development environment with ~nix develop~.
+  - [X] Verify the Python imports and test runner.
+  - [X] Add and document ~requirements.txt~.
+  - [X] Add a project ~.gitignore~.
+  - [X] Add a minimal ~README.md~.
+  - [ ] Add a basic test confirming that the test system works.
+  - [X] Run ~pytest -q~.
+  - [X] Commit with: ~chore: establish development environment~.
+
+* TODO Phase 1: Dataset acquisition and validation
+  :PROPERTIES:
+  :STATUS: TODO
+  :END:
+  - [ ] Use the UCI Bike Sharing Dataset.
+  - [ ] Document the official dataset URL.
+  - [ ] Store the dataset locally without committing large generated data.
+  - [ ] Implement the dataset loader.
+  - [ ] Validate that the dataset has at least 1,000 records.
+  - [ ] Validate the required numeric columns.
+  - [ ] Validate the required categorical columns.
+  - [ ] Check missing values and invalid input behavior.
+  - [ ] Write automated loader tests.
+  - [ ] Run ~pytest tests/test_data_loader.py -q~.
+  - [ ] Commit with: ~feat: add dataset loading and validation~.
+
+* TODO Phase 2: Core statistics library
+  :PROPERTIES:
+  :STATUS: TODO
+  :END:
+  - [ ] Create ~src/minhastats.py~.
+  - [ ] Implement the mean.
+  - [ ] Implement the median.
+  - [ ] Implement the mode.
+  - [ ] Implement the range.
+  - [ ] Implement population variance.
+  - [ ] Implement sample variance.
+  - [ ] Implement population standard deviation.
+  - [ ] Implement sample standard deviation.
+  - [ ] Implement quartiles and percentiles.
+  - [ ] Implement the coefficient of variation.
+  - [ ] Implement covariance.
+  - [ ] Implement Pearson correlation.
+  - [ ] Write tests before each implementation.
+  - [ ] Validate against NumPy/SciPy in tests only.
+  - [ ] Document sample versus population behavior.
+  - [ ] Run ~pytest tests/test_minhastats.py -q~.
+  - [ ] Commit with: ~feat: implement and validate core statistics~.
+
+* TODO Phase 3: Descriptive statistics
+  :PROPERTIES:
+  :STATUS: TODO
+  :END:
+  - [ ] Create reusable numeric summary functions.
+  - [ ] Create frequency-table functions.
+  - [ ] Create grouped-statistics functions.
+  - [ ] Implement IQR outlier detection.
+  - [ ] Implement automatic distribution interpretation.
+  - [ ] Test summary measures and frequency totals.
+  - [ ] Test grouped statistics by category.
+  - [ ] Test outlier detection with known data.
+  - [ ] Test empty and invalid inputs.
+  - [ ] Run ~pytest tests/test_descriptive.py -q~.
+  - [ ] Commit with: ~feat: add descriptive statistics analysis~.
+
+* TODO Phase 4: First interactive application slice
+  :PROPERTIES:
+  :STATUS: TODO
+  :END:
+  - [ ] Create ~app/streamlit_app.py~.
+  - [ ] Load the Bike Sharing Dataset.
+  - [ ] Allow selection of a numeric variable.
+  - [ ] Display mean, median, variance, and standard deviation.
+  - [ ] Display quartiles and outlier counts.
+  - [ ] Display a histogram and boxplot.
+  - [ ] Ensure displayed statistics come from the custom library.
+  - [ ] Run the application with Streamlit.
+  - [ ] Manually verify variable selection and chart rendering.
+  - [ ] Commit with: ~feat: add interactive descriptive statistics~.
+
+* TODO Phase 5: Probability and simulation
+  :PROPERTIES:
+  :STATUS: TODO
+  :END:
+  - [ ] Implement a Law of Large Numbers simulation.
+  - [ ] Implement a Central Limit Theorem simulation.
+  - [ ] Allow the user to control repetitions.
+  - [ ] Allow the user to control sample size.
+  - [ ] Support reproducible simulations with a random seed.
+  - [ ] Test result lengths and parameter validation.
+  - [ ] Test that larger samples reduce sample-mean variability.
+  - [ ] Add simulation controls to the Streamlit interface.
+  - [ ] Run ~pytest tests/test_simulation.py -q~.
+  - [ ] Commit with: ~feat: add Monte Carlo simulations~.
+
+* TODO Phase 6: Theoretical distributions
+  :PROPERTIES:
+  :STATUS: TODO
+  :END:
+  - [ ] Use Poisson as a candidate model for bike-rental counts.
+  - [ ] Use Normal for sample means and suitable continuous variables.
+  - [ ] Optionally compare Exponential or Uniform distributions.
+  - [ ] Estimate distribution parameters from the selected data.
+  - [ ] Plot observed data and theoretical overlays.
+  - [ ] Document the limitations of each comparison.
+  - [ ] Test parameter estimation and invalid inputs.
+  - [ ] Add distribution controls to the Streamlit interface.
+  - [ ] Run ~pytest tests/test_distributions.py -q~.
+  - [ ] Commit with: ~feat: add theoretical distribution comparisons~.
+
+* TODO Phase 7: Correlation and linear regression
+  :PROPERTIES:
+  :STATUS: TODO
+  :END:
+  - [ ] Implement Pearson correlation manually.
+  - [ ] Implement least-squares slope and intercept manually.
+  - [ ] Implement predictions for user-provided X values.
+  - [ ] Implement R-squared.
+  - [ ] Display a scatter plot and regression line.
+  - [ ] Add coefficient interpretation.
+  - [ ] Display the warning that correlation does not imply causation.
+  - [ ] Test positive and negative perfect correlation.
+  - [ ] Test zero-variance input handling.
+  - [ ] Test known regression coefficients and predictions.
+  - [ ] Run ~pytest tests/test_regression.py -q~.
+  - [ ] Commit with: ~feat: add correlation and linear regression~.
+
+* TODO Phase 8: Application integration
+  :PROPERTIES:
+  :STATUS: TODO
+  :END:
+  - [ ] Add a dataset overview section.
+  - [ ] Integrate descriptive statistics.
+  - [ ] Integrate simulations.
+  - [ ] Integrate theoretical distributions.
+  - [ ] Integrate correlation and regression.
+  - [ ] Add user-friendly validation messages.
+  - [ ] Test all application sections manually.
+  - [ ] Run the complete automated test suite.
+  - [ ] Run ~python -m compileall src app tests~.
+  - [ ] Commit with: ~feat: integrate statistical laboratory modules~.
+
+* TODO Phase 9: Documentation and academic report
+  :PROPERTIES:
+  :STATUS: TODO
+  :END:
+  - [ ] Document project installation with Nix.
+  - [ ] Document installation without Nix.
+  - [ ] Document test and application commands.
+  - [ ] Add team members and student IDs to ~README.md~.
+  - [ ] Add the dataset source to ~README.md~.
+  - [ ] Add screenshots or a GIF.
+  - [ ] Create ~RELATORIO.md~.
+  - [ ] Document formulas and implementation decisions.
+  - [ ] Document sample versus population calculations.
+  - [ ] Document validation tolerances.
+  - [ ] Document the three main statistical discoveries.
+  - [ ] Document limitations and interpretation cautions.
+  - [ ] Commit with: ~docs: complete project documentation and report~.
+
+* TODO Phase 10: Final reproducibility check
+  :PROPERTIES:
+  :STATUS: TODO
+  :END:
+  - [ ] Test the Nix workflow from a clean checkout.
+  - [ ] Test the standard Python virtual-environment workflow.
+  - [ ] Run ~pytest -q~.
+  - [ ] Run ~python -m compileall src app tests~.
+  - [ ] Start the Streamlit application successfully.
+  - [ ] Confirm no secrets are committed.
+  - [ ] Confirm ~.venv~ is ignored.
+  - [ ] Confirm large datasets are excluded or documented.
+  - [ ] Confirm the README commands work exactly as written.
+  - [ ] Review the Git history for meaningful commits.
+  - [ ] Create the final submission PDF and verify all links.
