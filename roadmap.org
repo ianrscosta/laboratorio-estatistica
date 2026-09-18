@@ -13,37 +13,38 @@
   - [X] Add a minimal ~README.md~.
   - [ ] Add a basic test confirming that the test system works.
   - [X] Run ~pytest -q~.
-  - [X] Commit with: ~chore: establish development environment~.
+  - [X] Commit it
 
 * TODO Phase 1: Dataset acquisition and validation
   :PROPERTIES:
   :STATUS: TODO
   :END:
-  - [ ] Use the UCI Bike Sharing Dataset.
-  - [ ] Document the official dataset URL.
-  - [ ] Store the dataset locally without committing large generated data.
-  - [ ] Implement the dataset loader.
+  - [X] Use the UCI Bike Sharing Dataset.
+  - [X] Document the official dataset URL.
+  - [X] Store the dataset locally without committing large generated data.
+  - [X] Implement the dataset loader.
   - [ ] Validate that the dataset has at least 1,000 records.
   - [ ] Validate the required numeric columns.
   - [ ] Validate the required categorical columns.
   - [ ] Check missing values and invalid input behavior.
   - [ ] Write automated loader tests.
   - [ ] Run ~pytest tests/test_data_loader.py -q~.
-  - [ ] Commit with: ~feat: add dataset loading and validation~.
+  - [ ] Commit it
+*** Letting data set validation for later since it isn't required
 
 * TODO Phase 2: Core statistics library
   :PROPERTIES:
   :STATUS: TODO
   :END:
-  - [ ] Create ~src/minhastats.py~.
-  - [ ] Implement the mean.
-  - [ ] Implement the median.
-  - [ ] Implement the mode.
-  - [ ] Implement the range.
-  - [ ] Implement population variance.
-  - [ ] Implement sample variance.
-  - [ ] Implement population standard deviation.
-  - [ ] Implement sample standard deviation.
+  - [X] Create ~src/minhastats.py~.
+  - [X] Implement the mean.
+  - [X] Implement the median.
+  - [X] Implement the mode.
+  - [X] Implement the range.
+  - [X] Implement population variance.
+  - [X] Implement sample variance.
+  - [X] Implement population standard deviation.
+  - [X] Implement sample standard deviation.
   - [ ] Implement quartiles and percentiles.
   - [ ] Implement the coefficient of variation.
   - [ ] Implement covariance.

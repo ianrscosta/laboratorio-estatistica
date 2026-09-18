@@ -6,3 +6,4 @@ pycache/
 *.py[cod]
 .env
 .DS_Store
+data/
