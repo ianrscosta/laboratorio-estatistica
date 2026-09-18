@@ -5,6 +5,7 @@ import streamlit as st
 import src.mystats as my
 
 continuos_data = ["temp", "atemp", "hum", "windspeed"]
+non_categorized_data = ["instant", "dteday", "casual", "registered", "cnt"]
 non_numeric_data = ["dteday"]
 
 data = pd.read_csv("./data/hour.csv")
@@ -211,6 +212,32 @@ if selected_variable not in non_numeric_data:
         axis_box.boxplot(values, vert=False)
         st.pyplot(figure_box)
         plt.close(figure_box)
+
+        if selected_variable not in non_categorized_data:
+            if selected_variable in continuos_data:
+                chart_data = pd.cut(
+                    data[selected_variable].dropna(),
+                    bins=5,
+                )
+            else:
+                chart_data = data[selected_variable].dropna()
+
+            counts = chart_data.value_counts().sort_index()
+
+            figure_pie, axis_pie = plt.subplots(figsize=(6, 6))
+            axis_pie.set_title(f"{selected_variable} distribution")
+            axis_pie.axis("equal")
+
+            axis_pie.pie(
+                counts.values,
+                labels=counts.index.astype(str),
+                autopct="%1.1f%%",
+                startangle=90,
+            )
+
+            st.pyplot(figure_pie)
+            plt.close(figure_pie)
+
 
 else:
     with center:
