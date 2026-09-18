@@ -1,22 +1,25 @@
 from math import sqrt
 
+
 def mean(*values) -> float:
     if not values:
         raise ValueError("No value provided")
 
-    return sum(values)/len(values) 
+    return sum(values) / len(values)
+
 
 def median(*values) -> float:
     if not values:
         raise ValueError("No value provided")
 
     sorted_values = sorted(values)
-    middle = len(values)//2
+    middle = len(values) // 2
 
     if len(values) % 2 == 0:
-        return (sorted_values[middle-1] + sorted_values[middle])/2
+        return (sorted_values[middle - 1] + sorted_values[middle]) / 2
     else:
         return sorted_values[middle]
+
 
 def mode(*values) -> float:
     if not values:
@@ -33,7 +36,7 @@ def mode(*values) -> float:
     for value in sorted_values:
         if value != current_value:
             current_value = value
-            current_value_count = 1 
+            current_value_count = 1
         else:
             current_value_count += 1
             if current_value == selected_value:
@@ -45,6 +48,7 @@ def mode(*values) -> float:
 
     return selected_value
 
+
 def data_range(*values) -> float:
     if not values:
         raise ValueError("No value provided")
@@ -53,10 +57,11 @@ def data_range(*values) -> float:
 
     return sorted_values[-1] - sorted_values[0]
 
+
 def std_variance(*values) -> float:
     if not values:
         raise ValueError("No value provided")
-    
+
     mean_value = mean(*values)
     squared_differences = 0
 
@@ -65,10 +70,11 @@ def std_variance(*values) -> float:
 
     return squared_differences / len(values)
 
+
 def sample_variance(*values) -> float:
     if len(values) < 2:
         raise ValueError("No value provided")
-    
+
     mean_value = mean(*values)
     squared_differences = 0
 
@@ -77,26 +83,29 @@ def sample_variance(*values) -> float:
 
     return squared_differences / (len(values) - 1)
 
+
 def std_deviation(*values) -> float:
     if len(values) < 2:
         raise ValueError("No value provided")
 
     return sqrt(std_variance(*values))
-    
+
+
 def sample_deviation(*values) -> float:
     if not values:
         raise ValueError("No value provided")
 
     return sqrt(sample_variance(*values))
- 
-def percentile(indicator, *values) -> float:    
+
+
+def percentile(indicator, *values) -> float:
 
     if indicator < 0 or indicator > 100:
-       raise ValueError("Value must be between 0 and 100")
+        raise ValueError("Value must be between 0 and 100")
 
     sorted_values = sorted(values)
     value_quantity = len(values)
-    ivalue = ((indicator / 100) * (value_quantity - 1))
+    ivalue = (indicator / 100) * (value_quantity - 1)
 
     lower_index = int(ivalue)
     fraction = ivalue - lower_index
@@ -109,7 +118,6 @@ def percentile(indicator, *values) -> float:
     return lower_value + fraction * (upper_value - lower_value)
 
 
-    
 def quartiles(indicator, *values) -> float:
 
     if indicator not in (1, 2, 3):
@@ -117,12 +125,13 @@ def quartiles(indicator, *values) -> float:
 
     return percentile((indicator * 25), *values)
 
+
 def coefficient_of_variation(*values) -> float:
     if mean(*values) == 0:
         raise ValueError("Coefficient of variation is undefined when the mean is 0")
 
-
     return (std_deviation(*values) / mean(*values)) * 100
+
 
 def covariance(x, y) -> float:
     if len(x) == 0 or len(y) == 0:
@@ -139,8 +148,9 @@ def covariance(x, y) -> float:
 
     return multiplied_difference / len(x)
 
+
 def sample_covariance(x, y) -> float:
-    
+
     if len(x) == 0 or len(y) == 0:
         raise ValueError("Both collections should be non-empty")
     elif len(x) != len(y):
@@ -155,7 +165,8 @@ def sample_covariance(x, y) -> float:
 
     return multiplied_difference / (len(x) - 1)
 
-def pearson_correlation(x, y) -> float: 
+
+def pearson_correlation(x, y) -> float:
     if len(x) == 0 or len(y) == 0:
         raise ValueError("Both collections should be non-empty")
     elif len(x) != len(y):
@@ -165,11 +176,13 @@ def pearson_correlation(x, y) -> float:
 
     return covariance(x, y) / (std_deviation(*x) * std_deviation(*y))
 
+
 def iqr(*values) -> float:
     if not values:
         raise ValueError("No value provided")
 
     return quartiles(3, *values) - quartiles(1, *values)
+
 
 def get_outliers(*values) -> dict[str, float | list[float]]:
     if not values:
@@ -177,7 +190,7 @@ def get_outliers(*values) -> dict[str, float | list[float]]:
 
     iqr_value = iqr(*values)
     lower_fence = quartiles(1, *values) - (1.5 * iqr_value)
-    upper_fence = quartiles(3, *values) + (1.5 * iqr_values)
+    upper_fence = quartiles(3, *values) + (1.5 * iqr_value)
     lower_outliers: list[float] = []
     upper_outliers: list[float] = []
 
@@ -193,12 +206,3 @@ def get_outliers(*values) -> dict[str, float | list[float]]:
         "lower_outliers": lower_outliers,
         "upper_outliers": upper_outliers,
     }
-
-
-
-
-
-
-
-
-

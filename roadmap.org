@@ -59,7 +59,7 @@
   :PROPERTIES:
   :STATUS: TODO
   :END:
-  - [ ] Implement IQR outlier detection.
+  - [X] Implement IQR outlier detection.
   - [ ] Implement automatic distribution interpretation.
   - [ ] Test summary measures and frequency totals.
   - [ ] Test grouped statistics by category.
@@ -134,7 +134,7 @@
   :PROPERTIES:
   :STATUS: TODO
   :END:
-  - [ ] Add a dataset overview section.
+  - [X] Add a dataset overview section.
   - [ ] Integrate descriptive statistics.
   - [ ] Integrate simulations.
   - [ ] Integrate theoretical distributions.
