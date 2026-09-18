@@ -21,7 +21,7 @@ distribution = st.Page(
 )
 
 navigation = st.navigation(
-    [dashboard, dataset, simulation],
+    [dashboard, dataset, simulation, distribution],
     position="top",
 )
 
