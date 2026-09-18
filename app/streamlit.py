@@ -2,26 +2,31 @@ import streamlit as st
 
 dashboard = st.Page(
     "pages/dashboard.py",
-    title = "Dashboard",
+    title="Dashboard",
 )
 
 dataset = st.Page(
     "pages/dataset.py",
-    title = "Data Set",
+    title="Data Set",
 )
 
 simulation = st.Page(
     "pages/simulation.py",
-    title = "Simulation",
+    title="Simulation",
+)
+
+distribution = st.Page(
+    "pages/distribution.py",
+    title="Distribution",
 )
 
 navigation = st.navigation(
     [dashboard, dataset, simulation],
-    position = "top",
+    position="top",
 )
 
 st.set_page_config(
-    layout = "wide",
+    layout="wide",
 )
 
 navigation.run()
