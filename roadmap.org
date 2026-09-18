@@ -45,10 +45,10 @@
   - [X] Implement sample variance.
   - [X] Implement population standard deviation.
   - [X] Implement sample standard deviation.
-  - [ ] Implement quartiles and percentiles.
-  - [ ] Implement the coefficient of variation.
-  - [ ] Implement covariance.
-  - [ ] Implement Pearson correlation.
+  - [X] Implement quartiles and percentiles.
+  - [X] Implement the coefficient of variation.
+  - [X] Implement covariance.
+  - [X] Implement Pearson correlation.
   - [ ] Write tests before each implementation.
   - [ ] Validate against NumPy/SciPy in tests only.
   - [ ] Document sample versus population behavior.
@@ -59,9 +59,6 @@
   :PROPERTIES:
   :STATUS: TODO
   :END:
-  - [ ] Create reusable numeric summary functions.
-  - [ ] Create frequency-table functions.
-  - [ ] Create grouped-statistics functions.
   - [ ] Implement IQR outlier detection.
   - [ ] Implement automatic distribution interpretation.
   - [ ] Test summary measures and frequency totals.
@@ -75,14 +72,14 @@
   :PROPERTIES:
   :STATUS: TODO
   :END:
-  - [ ] Create ~app/streamlit_app.py~.
-  - [ ] Load the Bike Sharing Dataset.
-  - [ ] Allow selection of a numeric variable.
-  - [ ] Display mean, median, variance, and standard deviation.
-  - [ ] Display quartiles and outlier counts.
+  - [X] Create ~app/streamlit.py~.
+  - [X] Load the Bike Sharing Dataset.
+  - [X] Allow selection of a numeric variable.
+  - [X] Display mean, median, variance, and standard deviation.
+  - [X] Display quartiles and outlier counts.
   - [ ] Display a histogram and boxplot.
-  - [ ] Ensure displayed statistics come from the custom library.
-  - [ ] Run the application with Streamlit.
+  - [X] Ensure displayed statistics come from the custom library.
+  - [X] Run the application with Streamlit.
   - [ ] Manually verify variable selection and chart rendering.
   - [ ] Commit with: ~feat: add interactive descriptive statistics~.
 
@@ -120,7 +117,7 @@
   :PROPERTIES:
   :STATUS: TODO
   :END:
-  - [ ] Implement Pearson correlation manually.
+  - [X] Implement Pearson correlation manually.
   - [ ] Implement least-squares slope and intercept manually.
   - [ ] Implement predictions for user-provided X values.
   - [ ] Implement R-squared.

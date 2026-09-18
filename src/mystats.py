@@ -91,7 +91,7 @@ def sample_deviation(*values) -> float:
  
 def percentile(indicator, *values) -> float:    
 
-    if indicator < 0 or indicator > 100
+    if indicator < 0 or indicator > 100:
        raise ValueError("Value must be between 0 and 100")
 
     sorted_values = sorted(values)
@@ -125,7 +125,7 @@ def coefficient_of_variation(*values) -> float:
     return (std_deviation(*values) / mean(*values)) * 100
 
 def covariance(x, y) -> float:
-    if not x or not y:
+    if len(x) == 0 or len(y) == 0:
         raise ValueError("Both collections should be non-empty")
     elif len(x) != len(y):
         raise ValueError("Both collections must have the same number of elements")
@@ -140,7 +140,8 @@ def covariance(x, y) -> float:
     return multiplied_difference / len(x)
 
 def sample_covariance(x, y) -> float:
-    if not x or not y:
+    
+    if len(x) == 0 or len(y) == 0:
         raise ValueError("Both collections should be non-empty")
     elif len(x) != len(y):
         raise ValueError("Both collections must have the same number of elements")
@@ -154,15 +155,45 @@ def sample_covariance(x, y) -> float:
 
     return multiplied_difference / (len(x) - 1)
 
-def pearson_correlation(x, y) -> float:
-    if not x or not y:
+def pearson_correlation(x, y) -> float: 
+    if len(x) == 0 or len(y) == 0:
         raise ValueError("Both collections should be non-empty")
     elif len(x) != len(y):
         raise ValueError("Both collections must have the same number of elements")
-    elif std_deviation(*x) == 0 or std_deviation(*y) == 0
+    elif std_deviation(*x) == 0 or std_deviation(*y) == 0:
         raise ValueError("Correlation is undefined for constant values")
 
     return covariance(x, y) / (std_deviation(*x) * std_deviation(*y))
+
+def iqr(*values) -> float:
+    if not values:
+        raise ValueError("No value provided")
+
+    return quartiles(3, *values) - quartiles(1, *values)
+
+def get_outliers(*values) -> dict[str, float | list[float]]:
+    if not values:
+        raise ValueError("No value provided")
+
+    iqr_value = iqr(*values)
+    lower_fence = quartiles(1, *values) - (1.5 * iqr_value)
+    upper_fence = quartiles(3, *values) + (1.5 * iqr_values)
+    lower_outliers: list[float] = []
+    upper_outliers: list[float] = []
+
+    for value in values:
+        if value < lower_fence:
+            lower_outliers.append(value)
+        elif value > upper_fence:
+            upper_outliers.append(value)
+
+    return {
+        "lower_fence": lower_fence,
+        "upper_fence": upper_fence,
+        "lower_outliers": lower_outliers,
+        "upper_outliers": upper_outliers,
+    }
+
 
 
 
