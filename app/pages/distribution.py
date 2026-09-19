@@ -130,3 +130,9 @@ with center_right:
 
     st.pyplot(figure_poisson)
     plt.close(figure_poisson)
+
+    st.write(
+        "The data data doesn't fully match with the Poisson distribution,",
+        "as Poisson expects repetitions at a constant rate,",
+        "while the bike rentals vary by temperature, month, etc",
+    )
