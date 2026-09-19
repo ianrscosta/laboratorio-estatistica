@@ -2,7 +2,7 @@
 #+author: Ian Raphael Sampaio Costa
 #+startup: overview
 
-* TODO Phase 0: Development environment and repository
+* TODO Phase 0: Development environment and repository [87%]
   :PROPERTIES:
   :STATUS: TODO
   :END:
@@ -15,7 +15,7 @@
   - [X] Run ~pytest -q~.
   - [X] Commit it
 
-* TODO Phase 1: Dataset acquisition and validation
+* TODO Phase 1: Dataset acquisition and validation [36%]
   :PROPERTIES:
   :STATUS: TODO
   :END:
@@ -32,7 +32,7 @@
   - [ ] Commit it
 *** Letting data set validation for later since it isn't required
 
-* TODO Phase 2: Core statistics library
+* TODO Phase 2: Core statistics library [94%]
   :PROPERTIES:
   :STATUS: TODO
   :END:
@@ -49,18 +49,18 @@
   - [X] Implement the coefficient of variation.
   - [X] Implement covariance.
   - [X] Implement Pearson correlation.
-  - [ ] Write tests before each implementation.
-  - [ ] Validate against NumPy/SciPy in tests only.
+  - [X] Write tests before each implementation.
+  - [X] Validate against NumPy/SciPy in tests only.
   - [ ] Document sample versus population behavior.
-  - [ ] Run ~pytest tests/test_minhastats.py -q~.
-  - [ ] Commit with: ~feat: implement and validate core statistics~.
+  - [X] Run ~pytest tests/test_mystats.py -q~.
+  - [X] Commit it.
 
-* TODO Phase 3: Descriptive statistics
+* TODO Phase 3: Descriptive statistics [25%]
   :PROPERTIES:
   :STATUS: TODO
   :END:
   - [X] Implement IQR outlier detection.
-  - [ ] Implement automatic distribution interpretation.
+  - [X] Implement automatic distribution interpretation.
   - [ ] Test summary measures and frequency totals.
   - [ ] Test grouped statistics by category.
   - [ ] Test outlier detection with known data.
@@ -68,7 +68,7 @@
   - [ ] Run ~pytest tests/test_descriptive.py -q~.
   - [ ] Commit with: ~feat: add descriptive statistics analysis~.
 
-* TODO Phase 4: First interactive application slice
+* TODO Phase 4: First interactive application slice [100%]
   :PROPERTIES:
   :STATUS: TODO
   :END:
@@ -77,60 +77,51 @@
   - [X] Allow selection of a numeric variable.
   - [X] Display mean, median, variance, and standard deviation.
   - [X] Display quartiles and outlier counts.
-  - [ ] Display a histogram and boxplot.
+  - [X] Display a histogram and boxplot.
   - [X] Ensure displayed statistics come from the custom library.
   - [X] Run the application with Streamlit.
-  - [ ] Manually verify variable selection and chart rendering.
-  - [ ] Commit with: ~feat: add interactive descriptive statistics~.
+  - [X] Manually verify variable selection and chart rendering.
+  - [X] Commit it.
 
-* TODO Phase 5: Probability and simulation
+* TODO Phase 5: Probability and simulation [66%]
   :PROPERTIES:
   :STATUS: TODO
   :END:
-  - [ ] Implement a Law of Large Numbers simulation.
-  - [ ] Implement a Central Limit Theorem simulation.
-  - [ ] Allow the user to control repetitions.
-  - [ ] Allow the user to control sample size.
-  - [ ] Support reproducible simulations with a random seed.
+  - [X] Implement a Law of Large Numbers simulation.
+  - [X] Implement a Central Limit Theorem simulation.
+  - [X] Allow the user to control repetitions.
+  - [X] Allow the user to control sample size.
   - [ ] Test result lengths and parameter validation.
-  - [ ] Test that larger samples reduce sample-mean variability.
-  - [ ] Add simulation controls to the Streamlit interface.
+  - [X] Test that larger samples reduce sample-mean variability.
+  - [X] Add simulation controls to the Streamlit interface.
   - [ ] Run ~pytest tests/test_simulation.py -q~.
   - [ ] Commit with: ~feat: add Monte Carlo simulations~.
 
-* TODO Phase 6: Theoretical distributions
+* TODO Phase 6: Theoretical distributions [44%]
   :PROPERTIES:
   :STATUS: TODO
   :END:
-  - [ ] Use Poisson as a candidate model for bike-rental counts.
-  - [ ] Use Normal for sample means and suitable continuous variables.
-  - [ ] Optionally compare Exponential or Uniform distributions.
-  - [ ] Estimate distribution parameters from the selected data.
-  - [ ] Plot observed data and theoretical overlays.
-  - [ ] Document the limitations of each comparison.
+  - [X] Use Poisson as a candidate model for bike-rental counts.
+  - [X] Use Normal for sample means and suitable continuous variables.
+  - [X] Plot observed data and theoretical overlays.
   - [ ] Test parameter estimation and invalid inputs.
-  - [ ] Add distribution controls to the Streamlit interface.
   - [ ] Run ~pytest tests/test_distributions.py -q~.
   - [ ] Commit with: ~feat: add theoretical distribution comparisons~.
 
-* TODO Phase 7: Correlation and linear regression
+* TODO Phase 7: Correlation and linear regression [100%]
   :PROPERTIES:
   :STATUS: TODO
   :END:
   - [X] Implement Pearson correlation manually.
-  - [ ] Implement least-squares slope and intercept manually.
-  - [ ] Implement predictions for user-provided X values.
-  - [ ] Implement R-squared.
-  - [ ] Display a scatter plot and regression line.
-  - [ ] Add coefficient interpretation.
-  - [ ] Display the warning that correlation does not imply causation.
-  - [ ] Test positive and negative perfect correlation.
-  - [ ] Test zero-variance input handling.
-  - [ ] Test known regression coefficients and predictions.
-  - [ ] Run ~pytest tests/test_regression.py -q~.
-  - [ ] Commit with: ~feat: add correlation and linear regression~.
+  - [X] Implement least-squares slope and intercept manually.
+  - [X] Implement predictions for user-provided X values.
+  - [X] Implement R-squared.
+  - [X] Display a scatter plot and regression line.
+  - [X] Add coefficient interpretation.
+  - [X] Display the warning that correlation does not imply causation.
+  - [X] Commit it.
 
-* TODO Phase 8: Application integration
+* TODO Phase 8: Application integration [10%]
   :PROPERTIES:
   :STATUS: TODO
   :END:
@@ -145,7 +136,7 @@
   - [ ] Run ~python -m compileall src app tests~.
   - [ ] Commit with: ~feat: integrate statistical laboratory modules~.
 
-* TODO Phase 9: Documentation and academic report
+* TODO Phase 9: Documentation and academic report [0%]
   :PROPERTIES:
   :STATUS: TODO
   :END:
@@ -163,7 +154,7 @@
   - [ ] Document limitations and interpretation cautions.
   - [ ] Commit with: ~docs: complete project documentation and report~.
 
-* TODO Phase 10: Final reproducibility check
+* TODO Phase 10: Final reproducibility check [0%]
   :PROPERTIES:
   :STATUS: TODO
   :END:

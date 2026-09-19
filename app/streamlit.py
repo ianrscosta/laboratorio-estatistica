@@ -20,8 +20,13 @@ distribution = st.Page(
     title="Distribution",
 )
 
+regression = st.Page(
+    "pages/regression.py",
+    title="Correlation and regression",
+)
+
 navigation = st.navigation(
-    [dashboard, dataset, simulation, distribution],
+    [dashboard, dataset, simulation, distribution, regression],
     position="top",
 )
 
